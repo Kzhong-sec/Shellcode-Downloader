@@ -10,6 +10,6 @@ The build uses ConfigMaker.py to automatically set the encryption keys and C2 de
 
 **2.** Build the config via `py build_scripts/ConfigMaker.py`.
 
-**3.** Build the solution via `src/dowloader/VS_Project/Downloader.sln`.
+**3.** Build the solution via `src/VS_Project/Downloader.sln`.
 
 **4.** Run the server via `py build_scripts/Server.py`.
